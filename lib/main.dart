@@ -5,7 +5,7 @@ import 'import_file.dart';
 void main() => runApp(WeatherApp());
 
 class WeatherApp extends StatefulWidget {
-  WeatherApp({
+  const WeatherApp({
     super.key,
     City? selectedCity,
   });

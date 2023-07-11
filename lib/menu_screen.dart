@@ -100,7 +100,7 @@ class _MenuScreenState extends State<MenuScreen> {
                                 ),
                                 Helper().getIcon(
                                     value,
-                                    _weatherParameters?.data[0].coordinates[0]
+                                    _weatherParameters!.data[0].coordinates[0]
                                         .dates[index].date),
                                 Text(
                                   "${_weatherParameters?.data[0].coordinates[0].dates[index].value.toString()}º",

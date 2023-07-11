@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class Helper {
-  getIcon(value, dataTime) {
+  getIcon(double value, DateTime dataTime) {
     final currentTime = dataTime;
     final sunriseTime =
         DateTime(currentTime.year, currentTime.month, currentTime.day, 6, 0);
