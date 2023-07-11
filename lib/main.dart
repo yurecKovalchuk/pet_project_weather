@@ -5,7 +5,10 @@ import 'import_file.dart';
 void main() => runApp(WeatherApp());
 
 class WeatherApp extends StatefulWidget {
-  WeatherApp({super.key, City? selectedCity});
+  WeatherApp({
+    super.key,
+    City? selectedCity,
+  });
 
   @override
   State<WeatherApp> createState() => _WeatherApp();

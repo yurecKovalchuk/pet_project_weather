@@ -8,10 +8,10 @@ class LocationScreen extends StatelessWidget {
     required this.onSelectedCity,
     required this.cities,
   });
+
   final List<City> cities;
 
   Function(City city) onSelectedCity;
-
 
   @override
   Widget build(BuildContext context) {
@@ -22,20 +22,21 @@ class LocationScreen extends StatelessWidget {
           itemCount: cities.length,
           itemBuilder: (context, index) {
             return Container(
-                decoration: BoxDecoration(
-                  color: Colors.deepPurpleAccent, // Залитий фон
-                  borderRadius: BorderRadius.circular(20.0), // Заокруглені кути
+              decoration: BoxDecoration(
+                color: Colors.deepPurpleAccent, // Залитий фон
+                borderRadius: BorderRadius.circular(20.0), // Заокруглені кути
+              ),
+              margin: EdgeInsets.all(8.0),
+              child: ListTile(
+                title: Text(
+                  cities[index].name ?? "",
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
-                margin: EdgeInsets.all(8.0),
-                child: ListTile(
-                  title: Text(
-                    cities[index].name ?? "",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  onTap: () {
-                    onSelectedCity(cities[index]);
-                  },
-                ),);
+                onTap: () {
+                  onSelectedCity(cities[index]);
+                },
+              ),
+            );
           },
         ),
       ),

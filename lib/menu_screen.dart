@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'import_file.dart';
 
-
 class MenuScreen extends StatefulWidget {
-  MenuScreen({super.key, required this.selectedCity});
+  MenuScreen({
+    super.key,
+    required this.selectedCity,
+  });
 
   City? selectedCity;
 
@@ -217,11 +219,12 @@ class _MenuScreenState extends State<MenuScreen> {
                                   textAlign: TextAlign.center,
                                 ),
                                 const Center(
-                                    child: Icon(
-                                  Icons.wind_power,
-                                  size: 120,
-                                  color: Colors.white,
-                                ),),
+                                  child: Icon(
+                                    Icons.wind_power,
+                                    size: 120,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ],
                             ),
                           ),

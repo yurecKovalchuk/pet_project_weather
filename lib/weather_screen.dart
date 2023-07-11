@@ -5,7 +5,10 @@ import 'class_city_location.dart';
 import 'class_helper.dart';
 
 class WeatherScreen extends StatefulWidget {
-  WeatherScreen({super.key, required this.selectedCity});
+  WeatherScreen({
+    super.key,
+    required this.selectedCity,
+  });
 
   City? selectedCity;
 
