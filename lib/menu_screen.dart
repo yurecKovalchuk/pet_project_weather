@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import 'styles/styles.dart';
+
 import 'import_file.dart';
 
 class MenuScreen extends StatefulWidget {

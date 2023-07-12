@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather/styles/background_style.dart';
+
+import 'styles/styles.dart';
+
 import 'class_city_location.dart';
 
 class LocationScreen extends StatelessWidget {
