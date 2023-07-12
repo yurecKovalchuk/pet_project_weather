@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather/background_style.dart';
+import 'package:weather/styles/background_style.dart';
 import 'class_city_location.dart';
 
 class LocationScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class LocationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: gradientBackgroundDecoration(),
+        decoration: MainBackgroundDecoration.backgroundDecoration,
         child: ListView.builder(
           itemCount: cities.length,
           itemBuilder: (context, index) {

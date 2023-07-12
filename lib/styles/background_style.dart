@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-BoxDecoration gradientBackgroundDecoration() {
-  return const BoxDecoration(
+class MainBackgroundDecoration {
+  static BoxDecoration backgroundDecoration = const BoxDecoration(
     gradient: LinearGradient(
       colors: [
         Colors.indigo,

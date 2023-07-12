@@ -46,7 +46,7 @@ class _MenuScreenState extends State<MenuScreen> {
               child: CircularProgressIndicator(),
             )
           : Container(
-              decoration: gradientBackgroundDecoration(),
+              decoration: MainBackgroundDecoration.backgroundDecoration,
               child: Column(
                 children: [
                   Expanded(
