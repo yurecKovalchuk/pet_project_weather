@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'styles/styles.dart';
 
-import 'class_city_location.dart';
+import 'models/class_city_location.dart';
 
 class LocationScreen extends StatelessWidget {
   LocationScreen({

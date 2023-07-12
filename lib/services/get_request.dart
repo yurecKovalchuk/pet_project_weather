@@ -1,8 +1,8 @@
-import '../class_weather_parameters.dart';
+import '../models/class_weather_parameters.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:intl/intl.dart';
-import '../class_city_location.dart';
+import '../models/class_city_location.dart';
 
 class GetRequest {
   GetRequest();
