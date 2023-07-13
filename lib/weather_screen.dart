@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'services/services.dart';
 
 import 'models/models.dart';
-import 'helper/helper.dart';
+import 'widgets/widgets.dart';
 
 class WeatherScreen extends StatefulWidget {
   WeatherScreen({
@@ -78,7 +78,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             fontWeight: FontWeight.w100),
                       ),
                       const SizedBox(height: 16),
-                      Helper().getIcon(value, DateTime.now()),
+                      WeatherIconWidget(
+                        value: value,
+                        dataTime: DateTime.now(),
+                      ),
                     ],
                   ),
                 ],
