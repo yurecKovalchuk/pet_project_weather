@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'services/services.dart';
+import 'package:weather/models/models.dart';
+import 'package:weather/services/services.dart';
+import 'package:weather/widgets/widgets.dart';
 
-import 'models/models.dart';
-import 'widgets/widgets.dart';
+
 
 class WeatherScreen extends StatefulWidget {
   WeatherScreen({
