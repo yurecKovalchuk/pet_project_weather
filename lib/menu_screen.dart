@@ -4,7 +4,7 @@ import 'helper/helper.dart';
 import 'models/models.dart';
 import 'services/services.dart';
 import 'styles/styles.dart';
-
+import 'widgets/widgets.dart';
 
 class MenuScreen extends StatefulWidget {
   MenuScreen({
@@ -103,10 +103,11 @@ class _MenuScreenState extends State<MenuScreen> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                Helper().getIcon(
-                                    value,
-                                    _weatherParameters!.data[0].coordinates[0]
-                                        .dates[index].date),
+                                WeatherIconWidget(
+                                  value: value,
+                                  dataTime: _weatherParameters!
+                                      .data[0].coordinates[0].dates[index].date,
+                                ),
                                 Text(
                                   "${_weatherParameters?.data[0].coordinates[0].dates[index].value.toString()}º",
                                   style: const TextStyle(
