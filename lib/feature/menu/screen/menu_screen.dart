@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'helper/helper.dart';
-import 'models/models.dart';
-import 'services/services.dart';
-import 'styles/styles.dart';
-import 'widgets/widgets.dart';
+import 'package:weather/helper/helper.dart';
+import 'package:weather/models/models.dart';
+import 'package:weather/services/services.dart';
+import 'package:weather/styles/styles.dart';
+import 'package:weather/widgets/widgets.dart';
+
 
 class MenuScreen extends StatefulWidget {
   MenuScreen({

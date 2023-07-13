@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'styles/styles.dart';
+import 'package:weather/models/models.dart';
+import 'package:weather/styles/styles.dart';
 
-import 'models/models.dart';
 
 class LocationScreen extends StatelessWidget {
   LocationScreen({
