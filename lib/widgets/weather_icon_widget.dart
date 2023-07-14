@@ -42,7 +42,7 @@ class WeatherIconWidget extends StatelessWidget {
             currentTime.isBefore(sunsetTime)) {
           return Image.asset('assets/images/Sun cloud mid rain.png');
         } else {
-          return Image.asset('assets/images/moon.png');
+          return Image.asset('assets/images/moonn.png');
         }
     }
   }
