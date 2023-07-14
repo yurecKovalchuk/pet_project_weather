@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
 import 'feature/feature.dart';
 import 'models/models.dart';
-
 
 void main() => runApp(WeatherApp());
 
@@ -61,32 +58,25 @@ class _WeatherApp extends State<WeatherApp> {
     return MaterialApp(
       home: Scaffold(
         body: getPage(_currentIndex),
-        bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Colors.indigo,
-          buttonBackgroundColor: Colors.black,
-          color: Colors.black54,
-          animationDuration: Duration(microseconds: 300),
-          index: _currentIndex,
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
           onTap: (index) {
             setState(() {
               _currentIndex = index;
             });
           },
           items: const [
-            Icon(
-              Icons.place_outlined,
-              color: Colors.white,
-              size: 50,
+            BottomNavigationBarItem(
+              icon: Icon(Icons.location_on_outlined),
+              label: "location",
             ),
-            Icon(
-              Icons.add,
-              color: Colors.white,
-              size: 50,
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add),
+              label: "weather",
             ),
-            Icon(
-              Icons.list,
-              color: Colors.white,
-              size: 50,
+            BottomNavigationBarItem(
+              icon: Icon(Icons.list),
+              label: "menu",
             ),
           ],
         ),
