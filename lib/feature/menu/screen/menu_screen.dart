@@ -6,7 +6,6 @@ import 'package:weather/services/services.dart';
 import 'package:weather/styles/styles.dart';
 import 'package:weather/widgets/widgets.dart';
 
-
 class MenuScreen extends StatefulWidget {
   MenuScreen({
     super.key,
@@ -21,7 +20,7 @@ class MenuScreen extends StatefulWidget {
 
 class _MenuScreenState extends State<MenuScreen> {
   WeatherParameters? _weatherParameters;
-  var request = GetRequest();
+  final request = GetRequest();
   double value = 0;
 
   @override
@@ -95,7 +94,7 @@ class _MenuScreenState extends State<MenuScreen> {
                                 ),
                                 Text(
                                   Helper().getDayOfWeek(
-                                    _weatherParameters?.data[0].coordinates[0]
+                                    _weatherParameters!.data[0].coordinates[0]
                                         .dates[index].date.weekday,
                                   ),
                                   textAlign: TextAlign.center,

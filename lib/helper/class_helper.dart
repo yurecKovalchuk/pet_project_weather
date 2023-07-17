@@ -1,7 +1,7 @@
 class Helper {
 
-  String getDayOfWeek(int) {
-    switch (int) {
+  String getDayOfWeek(int numberDayWeek) {
+    switch (numberDayWeek) {
       case 1:
         return 'Mon';
       case 2:

@@ -26,13 +26,13 @@ class WeatherParameters {
 }
 
 class WeatherData {
-  String parameter;
-  List<Coordinates> coordinates;
-
   WeatherData(
     this.parameter,
     this.coordinates,
   );
+
+  String parameter;
+  List<Coordinates> coordinates;
 
   factory WeatherData.fromJson(Map<String, dynamic> json) {
     var coordinatesList = json['coordinates'] as List;
@@ -47,15 +47,15 @@ class WeatherData {
 }
 
 class Coordinates {
-  double lat;
-  double lon;
-  List<DateWeather> dates;
-
   Coordinates(
     this.lat,
     this.lon,
     this.dates,
   );
+
+  double lat;
+  double lon;
+  List<DateWeather> dates;
 
   factory Coordinates.fromJson(Map<String, dynamic> json) {
     var datesList = json['dates'] as List;
@@ -71,13 +71,13 @@ class Coordinates {
 }
 
 class DateWeather {
-  DateTime date;
-  double value;
-
   DateWeather(
     this.date,
     this.value,
   );
+
+  DateTime date;
+  double value;
 
   factory DateWeather.fromJson(Map<String, dynamic> json) {
     return DateWeather(
