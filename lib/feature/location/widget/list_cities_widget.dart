@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:weather/models/models.dart';
 
 class ListCitiesWidget extends StatelessWidget {
@@ -19,7 +20,7 @@ class ListCitiesWidget extends StatelessWidget {
         color: Colors.deepPurpleAccent,
         borderRadius: BorderRadius.circular(20.0),
       ),
-      margin: EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(8.0),
       child: ListTile(
         title: Text(
           city.name ?? "",

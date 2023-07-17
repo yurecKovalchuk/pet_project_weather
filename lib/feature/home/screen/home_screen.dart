@@ -10,12 +10,11 @@ class HomeScreen extends StatefulWidget {
   });
 
   @override
-  State<HomeScreen> createState() =>
-      _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  City? selectedCity;
+  City? _selectedCity;
   int _currentIndex = 1;
 
   List<City> cities = [
@@ -32,26 +31,25 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     } else if (index == 1) {
       return WeatherScreen(
-        selectedCity: selectedCity,
+        selectedCity: _selectedCity,
       );
     }
     return MenuScreen(
-      selectedCity: selectedCity,
+      selectedCity: _selectedCity,
     );
   }
 
   void onSelectCity(City city) {
     _currentIndex = 1;
-    selectedCity = city;
+    _selectedCity = city;
     setState(() {});
   }
 
   @override
   void initState() {
-    selectedCity = cities.first;
+    _selectedCity = cities.first;
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {

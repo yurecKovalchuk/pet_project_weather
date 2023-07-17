@@ -4,8 +4,6 @@ import 'package:weather/models/models.dart';
 import 'package:weather/services/services.dart';
 import 'package:weather/widgets/widgets.dart';
 
-
-
 class WeatherScreen extends StatefulWidget {
   WeatherScreen({
     super.key,
@@ -20,7 +18,7 @@ class WeatherScreen extends StatefulWidget {
 
 class _WeatherScreenState extends State<WeatherScreen> {
   WeatherParameters? weatherParameters;
-  var requestHelper = GetRequest();
+  final requestHelper = GetRequest();
   double value = 0;
 
   @override

@@ -14,13 +14,13 @@ class City {
 }
 
 class Location {
-  double? lat;
-  double? lon;
-
   Location({
     required this.lat,
     required this.lon,
   });
+
+  double? lat;
+  double? lon;
 
   @override
   String toString() {

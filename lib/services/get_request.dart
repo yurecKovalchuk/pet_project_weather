@@ -19,10 +19,9 @@ class GetRequest {
     String username = 'odesaexp_kovalchuk';
     String password = '2zb4KkVMl8';
 
-    String basicAuth = 'Basic ' +
-        base64Encode(
+    String basicAuth = 'Basic ${base64Encode(
           utf8.encode('$username:$password'),
-        );
+        )}';
 
     String url =
         'https://api.meteomatics.com/$formattedCurrentTime+00:00--$formattedFutureTime+00:00:PT2H/t_2m:C,precip_1h:mm,wind_speed_10m:ms/${city?.location?.lat.toString() ?? "46.4825"},${city?.location?.lon.toString() ?? "30.7233"}/json';
