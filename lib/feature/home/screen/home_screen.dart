@@ -1,67 +1,34 @@
 import 'package:flutter/material.dart';
 
-import 'package:weather/feature/feature.dart';
 import 'package:weather/models/models.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
     super.key,
     City? selectedCity,
+    required this.builder,
   });
+
+  final Widget Function(int index) builder;
+
+  static void selectTab(BuildContext context, int index) {
+    context.findAncestorStateOfType<_HomeScreenState>()?._changeIndex(index);
+  }
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  City? _selectedCity;
-  int _currentIndex = 1;
-
-  List<City> cities = [
-    City(name: "Kiev", location: Location(lat: 50.4501, lon: 30.5234)),
-    City(name: "Lviv", location: Location(lat: 49.8397, lon: 24.0297)),
-    City(name: "Odesa", location: Location(lat: 46.4825, lon: 30.7233)),
-  ];
-
-  Widget getPage(int index) {
-    if (index == 0) {
-      return LocationScreen(
-        onSelectedCity: onSelectCity,
-        cities: cities,
-      );
-    } else if (index == 1) {
-      return WeatherScreen(
-        selectedCity: _selectedCity,
-      );
-    }
-    return MenuScreen(
-      selectedCity: _selectedCity,
-    );
-  }
-
-  void onSelectCity(City city) {
-    _currentIndex = 1;
-    _selectedCity = city;
-    setState(() {});
-  }
-
-  @override
-  void initState() {
-    _selectedCity = cities.first;
-    super.initState();
-  }
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: getPage(_currentIndex),
+      body: widget.builder.call(_currentIndex),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
+        onTap: (index) => _changeIndex(index),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.location_on_outlined),
@@ -78,5 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  void _changeIndex(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 }
