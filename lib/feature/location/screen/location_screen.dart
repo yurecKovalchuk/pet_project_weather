@@ -1,31 +1,36 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:weather/feature/feature.dart';
-import 'package:weather/models/models.dart';
+import 'package:weather/feature/location/cubit/cubit.dart';
 import 'package:weather/styles/styles.dart';
 
 class LocationScreen extends StatelessWidget {
-  LocationScreen({
+  const LocationScreen({
     super.key,
-    required this.onSelectedCity,
-    required this.cities,
   });
-
-  final List<City> cities;
-
-  Function(City city) onSelectedCity;
 
   @override
   Widget build(BuildContext context) {
+    final locationCubit = BlocProvider.of<LocationCubit>(context);
+
     return Scaffold(
       body: Container(
         decoration: MainBackgroundDecoration.backgroundDecoration,
-        child: ListView.builder(
-          itemCount: cities.length,
-          itemBuilder: (context, index) {
-            return ListCitiesWidget(
-              onSelectedCity: onSelectedCity,
-              city: cities[index],
+        child: BlocBuilder<LocationCubit, LocationState>(
+          builder: (context, state) {
+            return ListView.builder(
+              itemCount: state.cities.length,
+              itemBuilder: (context, index) {
+                return ListCitiesWidget(
+                  onSelectedCity: (city) {
+                    HomeScreen.selectTab(context, 1);
+                    locationCubit.selectCity(city);
+                  },
+                  city: state.cities[index],
+                );
+              },
             );
           },
         ),
