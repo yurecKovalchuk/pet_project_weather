@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:weather/models/models.dart';
 
 class ListCitiesWidget extends StatelessWidget {
-  ListCitiesWidget({
+  const ListCitiesWidget({
     super.key,
     required this.onSelectedCity,
     required this.city,
@@ -11,7 +11,7 @@ class ListCitiesWidget extends StatelessWidget {
 
   final City city;
 
-  Function(City city) onSelectedCity;
+  final Function(City city) onSelectedCity;
 
   @override
   Widget build(BuildContext context) {
