@@ -13,8 +13,7 @@ class WeatherParameters {
 
   factory WeatherParameters.fromJson(Map<String, dynamic> json) {
     var dataList = json['data'] as List;
-    List<WeatherData> data =
-        dataList.map((item) => WeatherData.fromJson(item)).toList();
+    List<WeatherData> data = dataList.map((item) => WeatherData.fromJson(item)).toList();
 
     return WeatherParameters(
       json['user'],
@@ -26,18 +25,17 @@ class WeatherParameters {
 }
 
 class WeatherData {
-  String parameter;
-  List<Coordinates> coordinates;
-
   WeatherData(
     this.parameter,
     this.coordinates,
   );
 
+  String parameter;
+  List<Coordinates> coordinates;
+
   factory WeatherData.fromJson(Map<String, dynamic> json) {
     var coordinatesList = json['coordinates'] as List;
-    List<Coordinates> coordinates =
-        coordinatesList.map((item) => Coordinates.fromJson(item)).toList();
+    List<Coordinates> coordinates = coordinatesList.map((item) => Coordinates.fromJson(item)).toList();
 
     return WeatherData(
       json['parameter'],
@@ -47,20 +45,19 @@ class WeatherData {
 }
 
 class Coordinates {
-  double lat;
-  double lon;
-  List<DateWeather> dates;
-
   Coordinates(
     this.lat,
     this.lon,
     this.dates,
   );
 
+  double lat;
+  double lon;
+  List<DateWeather> dates;
+
   factory Coordinates.fromJson(Map<String, dynamic> json) {
     var datesList = json['dates'] as List;
-    List<DateWeather> dates =
-        datesList.map((item) => DateWeather.fromJson(item)).toList();
+    List<DateWeather> dates = datesList.map((item) => DateWeather.fromJson(item)).toList();
 
     return Coordinates(
       json['lat'],
@@ -71,13 +68,13 @@ class Coordinates {
 }
 
 class DateWeather {
-  DateTime date;
-  double value;
-
   DateWeather(
     this.date,
     this.value,
   );
+
+  DateTime date;
+  double value;
 
   factory DateWeather.fromJson(Map<String, dynamic> json) {
     return DateWeather(
